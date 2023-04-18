@@ -1,0 +1,82 @@
+html {
+
+    font-family: 'Pacifico', cursive;
+    height: 100%;
+    /*  RED color: #ee0000;
+        Dark Green color: #20672c;
+    */
+}
+
+body {
+    background-color: #a9bfdb;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    background-color: #1f5490;
+    padding: 30px;
+
+
+
+}
+
+.display {
+    background-color: #509624;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 300px;
+    width: 70%;
+
+
+
+}
+
+.status {
+    align-self: flex-end;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.time {
+    font-size: 200px;
+}
+
+.button {
+    transition: transform 0.1s ease-out, box-shadow;
+    font-size: 25px;
+    min-height: 50px;
+    min-width: 100px;
+    box-sizing: border-box;
+
+
+    background-color: #22249c;
+    box-shadow: 0 5px 0 #0d0e3d;
+    border-radius: 5px;
+    color: rgb(17, 1, 1);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.button-cont {
+    width: 70%;
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.red {
+    background-color: red;
+}
