@@ -29,7 +29,7 @@ start.onclick = function () {
     else {
         start.classList.remove("red");
         start.innerText = "Start";
-        //clearInterval(myTimer);
+        clearInterval(myTimer);
 
     }
 
@@ -64,7 +64,7 @@ setTimer.onclick = function () {
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    var myTimer = setInterval(function () {
+    myTimer = setInterval(() => {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
         minutes = minutes < 10 ? "0" + minutes : minutes;
