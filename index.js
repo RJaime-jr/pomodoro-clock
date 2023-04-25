@@ -12,16 +12,15 @@ let display = document.getElementById('time');
 // other Declerations
 let times = [10, 15, 20, 25];
 let timesCount = 0;
-let ongoing = false;
+let ispaused = true;
 let currentMin = 0;
 let currentSec = 0;
 
 
 //button events
 start.onclick = function () {
-    ongoing = !ongoing;
-    if (ongoing == true) {
-        startTimer(times[timesCount] * 60, display);
+    if (ispaused) {
+        startTimer(currentMin, display);
         start.classList.add("red");
         start.innerText = "Stop";
 
@@ -29,14 +28,14 @@ start.onclick = function () {
     else {
         start.classList.remove("red");
         start.innerText = "Start";
-        clearInterval(myTimer);
+        pauseTimer();
 
     }
 
     console.log("start button");
     //startTimer(times[timesCount] * 60, display);
 
-    console.log(ongoing);
+    console.log(ispaused);
 
 
 
@@ -44,6 +43,8 @@ start.onclick = function () {
 
 reset.onclick = function () {
     console.log("reset button");
+    pauseTimer();
+    currentMin = times[timesCount] * 60;
 
 }
 setTimer.onclick = function () {
@@ -63,6 +64,7 @@ setTimer.onclick = function () {
 // timer logic
 
 function startTimer(duration, display) {
+    ispaused = false;
     var timer = duration, minutes, seconds;
     myTimer = setInterval(() => {
         minutes = parseInt(timer / 60, 10);
@@ -76,6 +78,11 @@ function startTimer(duration, display) {
     }, 1000);
 
 
+}
+
+function pauseTimer() {
+    ispaused = true;
+    clearInterval(myTimer);
 }
 
 window.onload = function () {
